@@ -16,9 +16,9 @@
 			<div>Reuse count: {{ capsule.reuse_count }}</div>
 			<div>Water landings: {{ capsule.water_landings }}</div>
 			<div>Last update: {{ capsule.last_update }}</div>
-			<div v-if="capsule.launches">
+			<div>
 				<h3>Launches</h3>
-				<ul>
+				<ul v-if="capsule.launches.length">
 					<li
 						v-for="launch of capsule.launches"
 						:key="launch"
@@ -26,6 +26,7 @@
 						{{ launch }}
 					</li>
 				</ul>
+				<p v-else>No recorded launches.</p>
 			</div>
 			<div>Serial: {{ capsule.serial }}</div>
 			<div>Type: {{ capsule.type }}</div>
