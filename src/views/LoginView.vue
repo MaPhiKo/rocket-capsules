@@ -6,9 +6,10 @@
 
 	const userStore = useUser();
 	const { user } = storeToRefs(userStore);
-	const handleLogin = async () => {
+	const handleLogin = async (e) => {
 		await userStore.login();
 		if (user.value) {
+			e.target.reset();
 			router.push('/');
 		}
 	};
