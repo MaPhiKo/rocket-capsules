@@ -21,7 +21,7 @@
 		<form
 			v-if="!user"
 			@submit.prevent="handleLogin"
-			class="flex flex-col justify-between gap-2 max-w-[400px] m-auto border-2 border-black shadow-sm bg-slate-400 text-black p-4 rounded-md"
+			class="flex flex-col justify-between gap-2 max-w-[400px] m-auto border-2 border-black shadow-sm bg-slate-200 text-black p-4 rounded-md"
 			action="#"
 			method="post"
 		>
@@ -56,7 +56,7 @@
 		</form>
 		<div
 			v-else
-			class="flex flex-col items-center justify-center space-y-4 border-2 border-black shadow-sm max-w-[400px] mx-auto p-4 bg-slate-400 rounded-md"
+			class="flex flex-col items-center justify-center space-y-4 border-2 border-black shadow-sm max-w-[400px] mx-auto p-4 bg-slate-200 rounded-md"
 		>
 			<p>You're already logged in.</p>
 			<LogoutButton
