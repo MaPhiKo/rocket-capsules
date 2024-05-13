@@ -49,7 +49,7 @@
 </script>
 <template>
 	<div class="flex flex-col space-y-10">
-		<div class="flex flex-row space-x-4 justify-center">
+		<div class="flex flex-row gap-4 justify-center flex-wrap">
 			<button
 				:class="`shadow-sm flex items-center rounded-lg py-1 px-5 gap-2 bg-black border-2 hover:border-black hover:text-black border-${value.color} text-${value.color} hover:bg-${value.color}`"
 				type="button"
