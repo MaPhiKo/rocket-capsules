@@ -108,6 +108,6 @@
 		transition: all 0.8s ease-in;
 	}
 	.rocket-leave-to {
-		transform: translateY(-300px) translateX(200px);
+		transform: translateY(-600px) translateX(200px);
 	}
 </style>
