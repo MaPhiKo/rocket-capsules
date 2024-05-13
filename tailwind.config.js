@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+import defaultTheme from 'tailwindcss/defaultTheme'
 export default {
   safelist: [
     'border-red-700', 'text-red-700', 'hover:bg-red-700', 'bg-red-700',
@@ -11,6 +12,9 @@ export default {
     "./src/**/*.{vue,js,ts,jsx,tsx}",
   ],
   theme: {
+    fontFamily: {
+      sans: ['Inter', ...defaultTheme.fontFamily.sans]
+    },
     extend: {},
   },
   plugins: [],
