@@ -15,5 +15,8 @@ export const useUser = defineStore('user', () => {
 		const data = await response.json();
 		user.value = data.results[0];
 	};
-	return { user, login };
+	const logout = () => {
+		user.value = null;
+	};
+	return { user, login, logout };
 });

@@ -4,21 +4,22 @@ import { useUser } from '@/stores/user';
 
 const router = createRouter({
 	history: createWebHistory(import.meta.env.BASE_URL),
+	linkActiveClass: 'text-sky-300',
 	routes: [
 		{
 			path: '/',
-			name: 'rockets',
+			name: 'Capsules',
 			component: () => import('../views/CapsulesView.vue'),
 		},
 		{
 			path: '/login',
-			name: 'login',
+			name: 'Login',
 			component: LoginView,
 		},
 	],
 });
 router.beforeEach(async (to) => {
 	const { user } = useUser();
-	if (!user && to.name !== 'login') return '/login';
+	if (!user && to.name !== 'Login') return '/login';
 });
 export default router;

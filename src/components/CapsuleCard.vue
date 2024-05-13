@@ -1,17 +1,22 @@
 <script setup lang="ts">
 	import type { Capsule } from '@/types';
-	import { computed } from 'vue';
+	import { RocketLaunchIcon } from '@heroicons/vue/24/solid';
 	const props = defineProps<{
 		capsule: Capsule;
+		statusColor: string;
 	}>();
-	const statusColor = computed(() => props.capsule.status);
 </script>
 <template>
-	<article class="card">
+	<article
+		class="flex flex-col p-4 border-2 border-black shadow-sm bg-slate-400"
+	>
 		<div>
 			<h2>id: {{ capsule.id }}</h2>
-			<div>
-				Status: <span :class="statusColor"> {{ capsule.status }} </span>
+			<div class="flex items-center gap-2">
+				<div>Status:</div>
+				<div
+					:class="`bg-${props.statusColor} w-4 h-4 rounded-full animate-pulse`"
+				></div>
 			</div>
 			<div>Reuse count: {{ capsule.reuse_count }}</div>
 			<div>Water landings: {{ capsule.water_landings }}</div>
@@ -31,6 +36,7 @@
 			<div>Serial: {{ capsule.serial }}</div>
 			<div>Type: {{ capsule.type }}</div>
 		</div>
+		<RocketLaunchIcon class="w-16 h-16" />
 		<button
 			@click="$emit('launch')"
 			type="button"
@@ -40,25 +46,3 @@
 		</button>
 	</article>
 </template>
-<style scoped>
-	.card {
-		border: 2px solid grey;
-		padding: 1rem;
-		border-radius: 2rem;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-	}
-	.active {
-		color: green;
-	}
-	.retired {
-		color: darkorange;
-	}
-	.destroyed {
-		color: grey;
-	}
-	.unknown {
-		color: purple;
-	}
-</style>
