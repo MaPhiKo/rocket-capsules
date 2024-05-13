@@ -3,6 +3,7 @@ import { createPinia, storeToRefs } from 'pinia';
 import ToastPlugin from 'vue-toast-notification';
 import 'vue-toast-notification/dist/theme-default.css';
 import { useUser } from './stores/user';
+import '@/index.css';
 
 import App from './App.vue';
 import router from './router';
@@ -20,5 +21,7 @@ const { user } = storeToRefs(userStorage);
 watchEffect(() => {
 	if (user.value) {
 		sessionStorage.setItem('user', JSON.stringify(user.value));
+	} else {
+		sessionStorage.removeItem('user');
 	}
 });
