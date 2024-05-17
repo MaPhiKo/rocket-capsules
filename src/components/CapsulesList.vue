@@ -42,9 +42,11 @@
 	onMounted(async () => {
 		const response = await fetch('https://api.spacexdata.com/v4/capsules');
 		const data = await response.json();
-		capsules.value = data.sort(
-			(a: Capsule, b: Capsule) => a.status > b.status
-		);
+		capsules.value = data.sort((a: Capsule, b: Capsule) => {
+			if (a.status > b.status) return 1;
+			if (a.status < b.status) return -1;
+			return 0;
+		});
 	});
 </script>
 <template>
