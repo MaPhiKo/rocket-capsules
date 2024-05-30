@@ -19,7 +19,7 @@
 </script>
 <template>
 	<article class="flex flex-col border-2 border-black shadow-sm bg-slate-200">
-		<header
+		<div
 			class="p-4 flex flex-col sm:flex-row justify-between bg-slate-300 border-b border-black"
 		>
 			<div class="order-2 sm:order-1">
@@ -37,8 +37,8 @@
 					></div>
 				</div>
 			</div>
-		</header>
-		<body class="p-4 flex flex-col gap-4 grow">
+		</div>
+		<div class="p-4 flex flex-col gap-4 grow">
 			<div
 				class="flex h-36 items-center justify-center py-10 bg-sky-200 border border-black shadow-sm"
 			>
@@ -85,8 +85,8 @@
 					<p v-else>No recorded launches.</p>
 				</div>
 			</div>
-		</body>
-		<footer class="p-4">
+		</div>
+		<div class="p-4">
 			<button
 				class="py-2 px-5 border-2 border-black h-min w-min shadow-sm"
 				:class="[
@@ -100,7 +100,7 @@
 			>
 				Launch
 			</button>
-		</footer>
+		</div>
 	</article>
 </template>
 <style scoped>
